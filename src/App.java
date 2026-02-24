@@ -5,6 +5,7 @@ public class App {
         System.out.println("===== LIBRARY SYSTEM - JHANVI VERSION =====\n");
 
         Student s = new Student("Jhanvi", 10);
+        // adding books
         LibraryBook b = new LibraryBook("Database Basics");
         Librarian l = new Librarian("Mr. Rahul", 1, "EMP100");
 
