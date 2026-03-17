@@ -1,18 +1,18 @@
-## Getting Started
+# Library Management System
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## Project Description
 
-## Folder Structure
+This is a Java-based Library Management System using OOP concepts like abstraction, inheritance, and interfaces.
+It allows users to create students, librarians, and books, and perform actions like issuing and returning books.
 
-The workspace contains two folders by default, where:
+The program now includes dynamic user input using Scanner.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Exception Handling
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+The program uses try-catch-finally for handling errors.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+* try: contains main program logic
+* catch: handles invalid input errors
+* finally: closes Scanner and ends program safely
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+This ensures the program does not crash when wrong input is entered.
