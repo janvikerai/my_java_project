@@ -1,10 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.*;
 
 public class App {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        ArrayList<String> records = new ArrayList<>();
 
         try {
             System.out.println("===== LIBRARY SYSTEM =====");
@@ -38,7 +41,7 @@ public class App {
 
             Librarian l = new Librarian(lName, lId, code);
 
-            // Output
+            // ✅ USING OBJECTS (fixes warnings)
             System.out.println("\n--- STUDENT ---");
             s.showDetails();
             s.take();
@@ -53,11 +56,37 @@ public class App {
             l.add();
             l.remove();
 
+            // Store data in collection
+            records.add("Student: " + sName + ", ID: " + sId);
+            records.add("Book: " + title);
+            records.add("Librarian: " + lName + ", Code: " + code);
+
+            // Save to file
+            BufferedWriter writer = new BufferedWriter(new FileWriter("library_data.txt"));
+            for (String record : records) {
+                writer.write(record);
+                writer.newLine();
+            }
+            writer.close();
+
+            System.out.println("\nData saved successfully!");
+
+            // Read from file
+            System.out.println("\n--- SAVED DATA ---");
+            BufferedReader reader = new BufferedReader(new FileReader("library_data.txt"));
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            reader.close();
+
         } catch (Exception e) {
-            System.out.println("Invalid input! Please enter correct data.");
+            System.out.println("Invalid input! Please try again.");
         } finally {
             sc.close();
-            System.out.println("Program ended.");
+            System.out.println("\nProgram ended safely.");
         }
     }
 }
